@@ -1,0 +1,61 @@
+.notAvailable{
+    font-size: 2rem;
+    text-align: center;
+}
+.search{
+    height: 80px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-left: 2%;
+
+    display: flex;
+    align-items: center;
+
+    background: rgb(113, 168, 250, 0.3);
+}
+.input{
+    width: 350px;
+}
+.loader{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.competition-container{
+    padding: 2%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;   
+}
+.competition-card{
+    height: 220px;
+    width: 180px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+
+    border: solid 2px rgb(113, 168, 250, 0.5);
+    border-radius: 5px;
+    background: linear-gradient(0deg, rgba(39,144,199,0.1) 0%, rgba(255,255,255,1) 20%);
+
+    &:hover{
+        transform: scale(1.1);       
+    }
+}
+.competition-logo{
+    height: 150px;
+    width: 130px;
+}
+.competition-name, .competition-country{
+    margin-top: auto;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bolder;
+    color: rgba(84, 87, 92, 0.8); 
+}

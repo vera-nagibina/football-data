@@ -1,0 +1,32 @@
+<div class="notAvailable" *ngIf = "isAvailable === false; else available">Match data is not available</div>
+<ng-template #available>
+    <div *ngIf = "competitions.length !== 0; else loading">
+        <div class="search">
+            <span class="p-input-icon-left">
+                <i class="pi pi-search"></i>
+                <input type="text" class="input" pInputText placeholder="Search" 
+                [(ngModel)]="sCompetition"
+                (input) = "searchCompetition()" 
+                />
+            </span>
+        </div>
+        <div class="competition-container" >
+            <div class="competition-card" *ngFor = "let competition of filterCompetitions"
+            (click) = "selectCompetition(competition.id)"
+            >
+                <img class="competition-logo" src="assets/{{competition.code}}.png" alt="">
+                <span class="competition-name">{{competition.name | uppercase}}</span>
+                <span class="competition-country">{{competition.country}}</span>
+            </div>
+            
+        </div>
+    </div>
+    <ng-template #loading>
+        <div class="loader">
+            <p-progressSpinner></p-progressSpinner>
+        </div> 
+    </ng-template>
+</ng-template>
+
+
+
