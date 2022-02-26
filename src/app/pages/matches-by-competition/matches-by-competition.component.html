@@ -1,0 +1,17 @@
+<div class="notAvailable" *ngIf = "isAvailable === false; else available">Данные по матчам не доступны</div>
+<ng-template #available>        
+    <div *ngIf = "isLoad; else loading">
+        <p-breadcrumb [model]="menuItems"></p-breadcrumb>
+        <span class="header">Матчи</span>        
+        <app-search-by-date 
+        [dateFrom] = "dateFrom" [dateTo] = "dateTo"
+        (dateEvent) = "filterByDate($event)"        
+        ></app-search-by-date>        
+        <app-matches-table [matches]="matches"></app-matches-table>
+    </div>
+    <ng-template #loading>
+        <div class="loader">
+            <p-progressSpinner></p-progressSpinner>
+        </div> 
+    </ng-template>           
+</ng-template>

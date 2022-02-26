@@ -1,0 +1,18 @@
+<div class="search">
+    <span>С</span>
+    <p-calendar 
+    [(ngModel)]="dateFrom" 
+    [showIcon]="true" 
+    [readonlyInput] = "true" 
+    dateFormat="dd.mm.yy"
+    (onSelect) = "selectDates()"    
+    ></p-calendar>
+    <span>по</span>
+    <p-calendar 
+    [(ngModel)]="dateTo" 
+    [showIcon]="true" 
+    [readonlyInput] = "true" 
+    dateFormat="dd.mm.yy"
+    (onSelect) = "selectDates()"     
+    ></p-calendar>
+</div>

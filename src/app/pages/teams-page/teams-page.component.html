@@ -1,0 +1,25 @@
+<div class="notAvailable" *ngIf = "isAvailable === false; else available">Данные по командам не доступны</div>
+<ng-template #available>
+    <div *ngIf = "isLoad; else loading">        
+        <p-dataView [value]="filterTeams" [paginator]="true" [rows]="12" layout="grid">
+            <ng-template pTemplate="header">
+                <app-search-by-name
+                [name] = "teamName"
+                (onInput) = "searchTeam($event)"></app-search-by-name>
+            </ng-template>            
+            <ng-template let-team pTemplate="gridItem">
+                <div class="col-12 md:col-3">
+                    <div class="team-card" (click) = "selectTeam(team.id)">
+                        <span class="team-name">{{team.name | uppercase}}</span>
+                        <img src="{{team.crestUrl}}" alt="" height="100px" width="80px">
+                    </div>                    
+                </div>                
+            </ng-template>
+        </p-dataView>       
+    </div>
+    <ng-template #loading>
+        <div class="loader">
+            <p-progressSpinner></p-progressSpinner>
+        </div> 
+    </ng-template>
+</ng-template>

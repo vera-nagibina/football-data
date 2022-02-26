@@ -1,0 +1,25 @@
+<div class="notAvailable" *ngIf = "isAvailable === false; else available">Данные по соревнованиям не доступны</div>
+<ng-template #available>
+    <div *ngIf = "isLoad; else loading">        
+        <p-dataView [value]="filterCompetitions" [paginator]="true" [rows]="9" layout="grid">
+            <ng-template pTemplate="header">
+                <app-search-by-name
+                [name] = "competitionName"
+                (onInput) = "searchCompetition($event)"></app-search-by-name>
+            </ng-template>            
+            <ng-template let-competition pTemplate="gridItem">
+                <div class="col-12 md:col-4">
+                    <div class="competition-card" (click) = "selectCompetition(competition.id)">
+                        <span class="competition-name">{{competition.name | uppercase}}</span>
+                        <span class="competition-country">{{competition.area.name}}</span>
+                    </div>                    
+                </div>                
+            </ng-template>
+        </p-dataView>       
+    </div>
+    <ng-template #loading>
+        <div class="loader">
+            <p-progressSpinner></p-progressSpinner>
+        </div> 
+    </ng-template>
+</ng-template>

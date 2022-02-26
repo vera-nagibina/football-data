@@ -1,8 +1,15 @@
+import { Score } from "./score.model";
+
 export interface Match {
-    date: string,
+    awayTeam: {
+        id: number,
+        name: string
+    },
+    homeTeam: {
+        id: number,
+        name: string
+    },
+    score: Score,
     status: string,
-    homeTeam: string,
-    awayTeam: string,
-    homeTeamScore: string,
-    awayTeamScore: string,
+    utcDate: string
 }

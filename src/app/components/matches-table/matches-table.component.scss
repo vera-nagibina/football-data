@@ -1,0 +1,70 @@
+.notAvailable{
+    font-size: 2rem;
+    text-align: center;
+}
+.match-date{
+    display: flex;
+    flex-direction: row;
+    align-items: center;      
+    gap: 3rem;
+    flex-wrap: wrap;    
+}
+.match-status{
+    padding: 0.5rem;    
+    background: rgb(113, 168, 250, 0.3);
+}
+
+.match-row{    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    flex-wrap: wrap;
+    gap: 0.5rem;   
+}
+.match-teams, .match-score{    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;  
+    flex-grow: 1;
+}
+.homeTeam, .awayTeam{
+   width: 14rem;
+   margin-left: 2rem;   
+}
+.vs{
+    width: 2rem;
+    text-align: center;
+}
+.fullTime, .halfTime, .penalties{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+}
+.match-teams-score{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    flex-grow: 1;
+}
+@media (max-width: 500.1px){
+    .match-teams-score{        
+        flex-direction: column;        
+    }      
+}
+@media (max-width: 800.1px){
+    .match-row{
+        flex-direction: column;
+        justify-content: center;
+    }      
+}
+@media (max-width: 1120.1px){    
+    .homeTeam, .awayTeam{
+        width: 8rem;
+        margin-left: 0;
+        text-align: center;
+     }   
+}

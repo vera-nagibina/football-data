@@ -31,10 +31,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
+              "node_modules/primeflex/primeflex.css",
               "node_modules/primeicons/primeicons.css",
               "node_modules/primeng/resources/themes/md-light-indigo/theme.css",
-              "node_modules/primeng/resources/primeng.min.css"
+              "node_modules/primeng/resources/primeng.min.css",              
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -106,6 +107,9 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }

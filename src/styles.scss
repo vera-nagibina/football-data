@@ -1,3 +1,7 @@
+$primary-color: rgba(74, 81, 90, 0.8);
+$background-color: rgb(113, 168, 250, 0.3);
+$primary-color-hover: rgba(7, 74, 173, 0.8);
+
 * {
     padding: 0;
     margin: 0;
@@ -5,3 +9,66 @@
     
     font-size: 16px;
 }
+.p-menuitem-text {
+    font-size: inherit;    
+}
+.loader{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.p-tabmenu .p-tabmenu-nav {
+    background: $background-color;      
+}  
+.p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link {    
+    border-width: 0 0 2px 0;
+    border-color: none;
+    background: none; 
+    color: $primary-color;
+    font-size: 2rem;     
+}
+.p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link:not(.p-disabled):focus {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: none;
+    background: none;
+}
+.p-tabmenu .p-tabmenu-nav .p-tabmenuitem:not(.p-highlight):not(.p-disabled):hover .p-menuitem-link {
+    background: none;
+    border-color: none;
+    color: $primary-color-hover;
+}
+.p-tabmenu .p-tabmenu-nav .p-tabmenuitem.p-highlight .p-menuitem-link {
+    background: none;
+    border-color: none;
+    color: none;
+}
+.p-breadcrumb {
+  background: none;
+  border: none;
+}
+.p-breadcrumb ul li .p-menuitem-link {
+  transition: none;
+  border-radius: none;
+  background: none;
+}
+.p-breadcrumb ul li .p-menuitem-link:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: none;
+  background: none;  
+}
+.p-breadcrumb ul li .p-menuitem-link .p-menuitem-text {
+  color: $primary-color;
+  font-size: 1.2rem;
+  &:hover{
+    color: $primary-color-hover;
+  }
+}
+.p-breadcrumb ul li.p-breadcrumb-chevron {
+  margin: 0 0.5rem 0 0.5rem; 
+}
+.p-breadcrumb ul li:last-child .p-menuitem-text {
+  color: $primary-color;
+}
+  

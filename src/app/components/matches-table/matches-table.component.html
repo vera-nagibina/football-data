@@ -1,0 +1,53 @@
+<div class="notAvailable" *ngIf = "matches.length === 0; else available">Данные по матчам не найдены</div>
+<ng-template #available>
+    <p-table [value]="matches" styleClass="p-datatable-striped" 
+    responsiveLayout="scroll"
+    [rows]="10"
+    [paginator]="true">
+    <ng-template pTemplate="body" let-match>
+        <tr>                    
+            <td>
+                <div class="match-row">
+                    <div class="match-date">
+                        <span>{{match.utcDate | date: 'dd.MM.yyyy'}}</span>
+                        <span>{{match.utcDate | date: 'H:mm'}}</span>
+                        <div class="match-status">
+                            <span>{{match.status | status}}</span>
+                        </div> 
+                    </div>
+                    <div class="match-teams-score">
+                        <div class="match-teams">
+                            <span class="homeTeam">{{match.homeTeam.name}}</span>
+                            <span class="vs">-</span>
+                            <span class="awayTeam">{{match.awayTeam.name}}</span>
+                            
+                        </div>
+                        <div class="match-score">
+                            <div class = "fullTime">
+                                <span>{{match.score.fullTime.homeTeam}}</span>
+                                <span>:</span>
+                                <span>{{match.score.fullTime.awayTeam}}</span>
+                            </div>
+                            <div class = "halfTime">
+                                <span>({{match.score.halfTime.homeTeam}}</span>
+                                <span>:</span>
+                                <span>{{match.score.halfTime.awayTeam}})</span>
+                            </div> 
+                            <div class = "penalties">
+                                <span>({{match.score.penalties.homeTeam}}</span>
+                                <span>:</span>
+                                <span>{{match.score.penalties.awayTeam}})</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                                                      
+                </div>                                           
+            </td>       
+            
+        </tr>
+    </ng-template>  
+            
+    </p-table>
+</ng-template> 
